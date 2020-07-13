@@ -1,3 +1,3 @@
 #README
 
-## First commit - test
+## First commit
