@@ -1,0 +1,38 @@
+version: '3'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+
+  kafka:
+    build: .
+    ports:
+      - "9092:9092"
+    container_name: kafka
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.10.66:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "ipmi-log:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/kafka:/kafka
+    depends_on:
+      - zookeeper
+
+   #logstash:
+   #  image: logstash:7.6.1
+   #  container_name: logstash
+   #  command: logstash -r -f /config-dir/logstash.conf
+   #  ports:
+   #    - "5044:5044"
+   #    - "9600:9600"
+   #  links:
+   #    - kafka
+   #  volumes:
+   #    - ./elk-conf/logstash.conf:/config-dir/logstash.conf
+   #    - ./mt-logstash/:/logstash:ro
+   #  environment:
+   #    - LS_JAVA_OPTS: "-Xmx512m -Xms512m"
