@@ -31,8 +31,30 @@ services:
       - "9600:9600"
     links:
       - kafka
+      - elasitcsearch
     volumes:
       - ./elk-conf/logstash.conf:/config-dir/logstash.conf
       - ./data/logstash/:/logstash:ro
     environment:
       LS_JAVA_OPTS: "-Xmx512m -Xms512m"
+
+  elasticsearch:
+    image: elasticsearch:7.6.1
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - ./data/esdata:/usr/share/elasticsearch/data
+      - ./data/eslog:/var/log/elasticsearch
+      - ./elk-conf/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data/grafana:/var/lib/grafana
