@@ -22,17 +22,17 @@ services:
     depends_on:
       - zookeeper
 
-   #logstash:
-   #  image: logstash:7.6.1
-   #  container_name: logstash
-   #  command: logstash -r -f /config-dir/logstash.conf
-   #  ports:
-   #    - "5044:5044"
-   #    - "9600:9600"
-   #  links:
-   #    - kafka
-   #  volumes:
-   #    - ./elk-conf/logstash.conf:/config-dir/logstash.conf
-   #    - ./mt-logstash/:/logstash:ro
-   #  environment:
-   #    - LS_JAVA_OPTS: "-Xmx512m -Xms512m"
+  logstash:
+    image: logstash:7.6.1
+    container_name: logstash
+    command: logstash -r -f /config-dir/logstash.conf
+    ports:
+      - "5044:5044"
+      - "9600:9600"
+    links:
+      - kafka
+    volumes:
+      - ./elk-conf/logstash.conf:/config-dir/logstash.conf
+      - ./data/logstash/:/logstash:ro
+    environment:
+      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
