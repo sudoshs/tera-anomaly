@@ -1,4 +1,4 @@
-# IPMI to Visualization and Anomaly Detect
+# IPMI to Visualize and Anomaly Detect
 
 ## ipmitool command
     # ipmitool -I <interface> -H <host> -U <id> -P <password> <command>
