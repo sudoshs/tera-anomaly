@@ -59,12 +59,12 @@ services:
     volumes:
       - ./data/grafana:/var/lib/grafana
 
-  kibana:
-    image: kibana:7.6.1
-    container_name: kibana
-    ports:
-      - "5601:5601"
-    links:
-      - elasticsearch
-    volumes:
-      - ./elk-conf/kibana.yml:/usr/share/kibana/config/kibana.yml
+  # kibana:
+  #   image: kibana:7.6.1
+  #   container_name: kibana
+  #   ports:
+  #     - "5601:5601"
+  #   links:
+  #     - elasticsearch
+  #   volumes:
+  #     - ./elk-conf/kibana.yml:/usr/share/kibana/config/kibana.yml
