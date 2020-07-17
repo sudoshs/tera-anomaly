@@ -1,0 +1,5 @@
+server.name: "kibana"
+server.host: "0.0.0.0"
+elasticsearch.hosts: "http://elasticsearch:9200"
+#xpack.reporting.csv.maxSizeBytes: 1048576000
+

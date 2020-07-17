@@ -5,3 +5,4 @@ docker-env/overrides
 docker-env/*.sh
 docker-env/Dockerfile
 docker-env/LICENSE
+pyscript
