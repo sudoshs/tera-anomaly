@@ -63,8 +63,12 @@ services:
       - elasticsearch
     ports:
       - "3000:3000"
+    # environment:
+    #   - "COOKIE_SAMESITE=none"
+    #   - "ALLOW_EMBEDDING=true"
     volumes:
       - ./data/grafana:/var/lib/grafana
+      - ./elk-conf/grafana.ini:/usr/share/grafana/conf/defaults.ini
   
   # kibana:
   #   restart: always
