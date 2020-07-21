@@ -40,6 +40,23 @@ services:
       - ./data/logstash/:/logstash:ro
     environment:
       LS_JAVA_OPTS: "-Xmx512m -Xms512m"
+  
+  logstash-test:
+    restart: always
+    image: logstash:7.6.1
+    container_name: logstash-test
+    command: logstash -r -f /config-dir/logstash.conf
+    ports:
+      - "5045:5045"
+      - "9601:9601"
+    links:
+      - kafka
+      - elasticsearch
+    volumes:
+      - ./elk-conf/logstash-test.conf:/config-dir/logstash.conf
+      - ./data/logstash/:/logstash:ro
+    environment:
+      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
 
   elasticsearch:
     restart: always
