@@ -31,12 +31,12 @@
 |PS1 Input Power|Watts|Power Supply|Power 1 Input Power|
 |PS1 Curr Out %|Percent|Power Supply|Power 1 12V % of Maximun Current Output|
 |PS1 Temperature|Degrees C|Power Supply|Power 1 Temperature|
-|P1 Therm Ctrl %|Percent|Power Supply|??|
-|P2 Therm Ctrl %|Percent|Power Supply|??|
+|P1 Therm Ctrl %|Percent|Process|Process 1 Thermal Control|
+|P2 Therm Ctrl %|Percent|Process|Process 2 Thermal Control|
 |P1 DTS Therm Mgn|Degrees C|Temperature|CPU 1 Thermal Margin|
 |P2 DTS Therm Mgn|Degrees C|Temperature|CPU 2 Thermal Margin|
-|P1 Temperature|Degrees C|Power Supply|Power 1 Temperature|
-|P2 Temperature|Degrees C|Power Supply|Power 1 Temperature|
+|P1 Temperature|Degrees C|Process|Process 1 Temperature|
+|P2 Temperature|Degrees C|Process|Process 2 Temperature|
 |DIMM Thrm Mrgn 1|Degrees C|TemPerature|Memory Thermal Margin*|
 |DIMM Thrm Mrgn 2|Degrees C|TemPerature|Memory Thermal Margin|
 |DIMM Thrm Mrgn 3|Degrees C|TemPerature|Memory Thermal Margin*|
