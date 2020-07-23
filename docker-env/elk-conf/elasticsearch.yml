@@ -1,5 +1,6 @@
 cluster.name: "docker-cluster"
 network.host: 0.0.0.0
 discovery.type: single-node
+# search.max_buckets: -1
 # xpack.monitoring.enabled: true
 # xpack.monitoring.collection.enabled: true
