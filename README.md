@@ -5,8 +5,8 @@
 
 ## Sensor list
     # ipmitool sensor -v
-> IPMI Sensor Units Table은 IPMI-HEADER.md<br>
-> IPMI SEL Table은 IPMI-SEL.md
+> IPMI Sensor Units Table은 [IPMI-HEADER.md](https://github.com/sudoshs/tera-anomaly/blob/master/IPMI-Header.md)<br>
+> IPMI SEL Table은 [IPMI-SEL.md](https://github.com/sudoshs/tera-anomaly/blob/master/IPMI-SEL.md)
 
 ## Sensor list headers
 - Sensor - Sensor ID
