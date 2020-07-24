@@ -5,7 +5,8 @@
 
 ## Sensor list
     # ipmitool sensor -v
-> IPMI Sensor Units Table은 IPMI-HEADER.md
+> IPMI Sensor Units Table은 IPMI-HEADER.md<br>
+> IPMI SEL Table은 IPMI-SEL.md
 
 ## Sensor list headers
 - Sensor - Sensor ID
