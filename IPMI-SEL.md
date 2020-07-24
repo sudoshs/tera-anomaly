@@ -1,7 +1,6 @@
 # IPMI Sensor Event Log
 
-### 171 | 07/20/2020 | 03:45:09 | System Event #0x83 | OEM System boot event | Asserted
-
+### Example
 - SEL Record ID          : 0170
 - Record Type           : 02
 - Timestamp             : 07/20/2020 03:44:50
