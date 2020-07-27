@@ -88,13 +88,17 @@ services:
       - ./data/grafana:/var/lib/grafana
       - ./elk-conf/grafana.ini:/usr/share/grafana/conf/defaults.ini
   
-  # kibana:
-  #   restart: always
-  #   image: kibana:7.6.1
-  #   container_name: kibana
-  #   links:
-  #     - elasticsearch
-  #   ports:
-  #     - "5601:5601"
-  #   volumes:
-  #     - ./elk-conf/kibana.yml:/usr/share/kibana/config/kibana.yml
+  mysql:
+    container_name: mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: tera#123
+      MYSQL_USER: tera
+      MYSQL_PASSWORD: xpfk#123
+      MYSQL_DATABASE: sel
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - 3306:3306
